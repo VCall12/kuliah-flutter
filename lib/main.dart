@@ -76,10 +76,8 @@ class _ProfileState extends State<Profile> {
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage(
-                            'https://instagram.fbpn2-1.fna.fbcdn.net/v/t51.2885-19/275291441_1430646934017657_1705123590073984877_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fbpn2-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=mHm69z_9ipYAX8beHB_&tn=xUJRKIofOY1rKOjn&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCLe-PVQnSkuitQPUDup70rSQBTeyKqJ9aGkN_J1iD_yQ&oe=6400195D&_nc_sid=8fd12b'
-                          )
-                        )
+                          image: AssetImage("assets/images/PDH.png"),
+                        ),
                       ),
                     ),
                     Positioned(
@@ -106,40 +104,30 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
               SizedBox(height: 30),
-              buildTextField("Nama Panjang", "Vicalis Armonanda", false),
-              buildTextField("NIM", "2009116009", false),
-              buildTextField("Alamat", "Samarinda", false),
-              SizedBox(height: 30),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  OutlinedButton(
-                    onPressed: () {},
-                    child: Text("CANCEL", style: TextStyle(
-                      fontSize: 15,
-                      letterSpacing: 2,
-                      color: Colors.black,
-                    )),
-                    style: OutlinedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 50),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
-                    ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+              children : <Widget>[
+              const Text("Vicalis Armonanda",
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold
                   ),
-                  ElevatedButton(
-                    onPressed: () {}, 
-                    child: Text("SAVE", style: TextStyle(
-                      fontSize: 15,
-                      letterSpacing: 2,
-                      color: Colors.white
-                    )),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      padding: EdgeInsets.symmetric(horizontal: 50),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
-                    ),
-                    )
-                ],
-              )
+                  ),
+              const Text("2009116009",
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold
+                  ),
+                  ),
+              const Text("Sistem Informasi",
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold
+                  ),
+                  ),
+              ],
+              ),
+              SizedBox(height: 30),
             ],
           ),
         ),
@@ -147,28 +135,7 @@ class _ProfileState extends State<Profile> {
     );
   }
 
-  Widget buildTextField(String labelText, String placeholder, bool isPasswordTextField) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: 30),
-      child: TextField(
-        obscureText: isPasswordTextField ? isObsecurePassword : false,
-        decoration: InputDecoration(
-          suffixIcon: isPasswordTextField ?
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.remove_red_eye, color: Colors.grey),
-            ): null,
-        contentPadding: EdgeInsets.only(bottom: 5),
-        labelText: labelText,
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        hintText: placeholder,
-        hintStyle: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-          color: Colors.grey
-        )
-        ),
-      ),
-      );
-  }
+  
+     
+  
 }
