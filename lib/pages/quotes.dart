@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
-
-
 class QuotesPage extends StatelessWidget {
   final List<Map<String, dynamic>> _quotes = [
     {
